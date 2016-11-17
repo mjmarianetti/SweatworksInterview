@@ -18,3 +18,11 @@ The user should also be able to choose on which side of the page the numbers sho
 Make sure you use a directive in order to display the list. The directive should react to changes in the number range inputs. How it's implemented is up to you.
 
 #### Good luck and remember, use the force Luke!
+
+## Test
+
+Use a webserver to test the project.
+
+npm install http-server -g
+
+http-server .
