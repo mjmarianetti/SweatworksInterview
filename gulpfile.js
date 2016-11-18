@@ -10,8 +10,12 @@ const clean = require('gulp-clean');
 
 const paths = {
   js: [
-    'src/**/module.js',
-    'src/**/*.js',
+    'src/**/*.module.js',
+    'src/**/*.service.js',
+    'src/**/*.filter.js',
+    'src/**/*.directive.js',    
+    'src/**/*.state.js',
+    'src/**/*.controller.js',
     'dist/templates.js'
   ],
   html: [
