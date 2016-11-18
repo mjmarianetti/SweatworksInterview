@@ -7,8 +7,10 @@
 
 	function numberService() {
 
-		this.range = function(min,max){
-			let rangeArray = [];			
+		let vm = this;
+
+		vm.range = (min,max) => {
+			let rangeArray = [];
 			for (let i = min; i <= max; i++) {
 				rangeArray.push(i);
 			}

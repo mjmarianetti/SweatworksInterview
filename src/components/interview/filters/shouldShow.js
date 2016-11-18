@@ -7,8 +7,21 @@
 
   function shouldShow()
   {
-    return function(showAll,showEven,number){
-      return showAll || ((number % 2) != showEven);
+    return (items,showAll,showEven) => {
+      if(showAll){
+        return items;
+      }
+
+      if(showEven){
+        return items.filter(function(number){
+          return (number % 2) === 0;
+        });
+      }
+
+      return items.filter(function(number){
+        return (number % 2) !== 0;
+      });
+
     };
   }
 

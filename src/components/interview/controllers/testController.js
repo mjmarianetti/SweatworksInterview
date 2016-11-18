@@ -6,30 +6,37 @@
 	.controller('testController', testController);
 
 	function testController($scope,numberService) {
-		$scope.minNumber = 0;
-		$scope.maxNumber = 10;
-		$scope.all = true;
-		$scope.even = false;
-		$scope.left = true;
+		let vm = this;
 
-		$scope.change = function(){
-			$scope.range = numberService.range($scope.minNumber,$scope.maxNumber);
+		vm.minNumber = 0;
+		vm.maxNumber = 10;
+		vm.all = true;
+		vm.even = false;
+		vm.left = true;
+
+		vm.init = () => {
+			vm.range = numberService.range(vm.minNumber,vm.maxNumber);
+
 		};
 
-		$scope.showAll = function(){
-			$scope.all = true;
+		vm.change = () => {
+			vm.range = numberService.range(vm.minNumber,vm.maxNumber);
 		};
 
-		$scope.changeParity = function(even){
-			$scope.all = false;
-			$scope.even = even;
+		vm.showAll = () => {
+			vm.all = true;
 		};
 
-		$scope.toggleDisplay = function(left){
-			$scope.left = left;
+		vm.changeParity = (even) => {
+			vm.all = false;
+			vm.even = even;
 		};
 
-		$scope.range = numberService.range($scope.minNumber,$scope.maxNumber);
+		vm.toggleDisplay = (left) => {
+			vm.left = left;
+		};
+
+		vm.init();
 	}
 
 })();

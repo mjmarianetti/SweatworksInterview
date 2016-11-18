@@ -4,35 +4,31 @@
 	<link rel="stylesheet" type="text/css" href="styles.css">
 	<title>Interview</title>
 	<script type="text/javascript" src="angular.js"></script>
-	<script type="text/javascript" src="module.js"></script>
-	<script type="text/javascript" src="controller.js"></script>
-	<script type="text/javascript" src="directive.js"></script>
-	<script type="text/javascript" src="filters.js"></script>
-	<script type="text/javascript" src="service.js"></script>
+	<script type="text/javascript" src="dist/app.js"></script>
 
 </head>
-<body ng-app="test" ng-controller="testController">
+<body ng-app="test" ng-controller="testController as vm">
 	<div class="content">
 		<header class="controls-holder container">
 			<div class="numbers-holder">
-				<input type="number" placeholder="Min number" ng-model="minNumber" step="1" ng-min="0" ng-max="maxNumber" ng-change="change()">
-				<input type="number" placeholder="Max number" ng-model="maxNumber" step="1" ng-min="minNumber" ng-change="change()">
+				<input type="number" placeholder="Min number" ng-model="vm.minNumber" step="1" ng-min="0" ng-max="vm.maxNumber" ng-change="vm.change()">
+				<input type="number" placeholder="Max number" ng-model="vm.maxNumber" step="1" ng-min="vm.minNumber" ng-change="vm.change()">
 			</div>
 			<div class="buttons-holder">
-				<button ng-click="showAll()">Show all numbers</button>
-				<button ng-click="changeParity(true)">Show even numbers</button>
-				<button ng-click="changeParity(false)">Show odd numbers</button>
+				<button ng-click="vm.showAll()">Show all numbers</button>
+				<button ng-click="vm.changeParity(true)">Show even numbers</button>
+				<button ng-click="vm.changeParity(false)">Show odd numbers</button>
 			</div>
 		</header>
 		<div class="results-space container">
 			<div class="buttons-holder">
-				<button ng-click="toggleDisplay(true)">Display on the left</button>
-				<button ng-click="toggleDisplay(false)">Display on the right</button>
+				<button ng-click="vm.toggleDisplay(true)">Display on the left</button>
+				<button ng-click="vm.toggleDisplay(false)">Display on the right</button>
 			</div>
 		</div>
 
 		<div class="list">
-			<number-directive items="range" show-all="all" show-even="even"></number-directive>
+			<number-directive items="vm.range" show-all="vm.all" show-even="vm.even" show-left="vm.left"></number-directive>
 			<!-- INSERT THE NUMBERS HERE. YOU ARE ALLOWED THE MODIFY OTHER PARTS OF THE CODE -->
 		</div>
 	</div>

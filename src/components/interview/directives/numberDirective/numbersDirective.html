@@ -1,0 +1,5 @@
+<ul ng-class="showLeft ? 'text-left' : 'text-right' ">
+  <li ng-repeat="number in items | shouldShow:showAll:showEven">
+    {{ number }}
+  </li>
+</ul>
