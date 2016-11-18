@@ -7,6 +7,7 @@
 	<script type="text/javascript" src="module.js"></script>
 	<script type="text/javascript" src="controller.js"></script>
 	<script type="text/javascript" src="directive.js"></script>
+	<script type="text/javascript" src="filters.js"></script>
 	<script type="text/javascript" src="service.js"></script>
 
 </head>
@@ -14,24 +15,24 @@
 	<div class="content">
 		<header class="controls-holder container">
 			<div class="numbers-holder">
-				<input type="number" placeholder="Min number" ng-model="minNumber" step="1">
-				<input type="number" placeholder="Max number" ng-model="maxNumber" step="1">
+				<input type="number" placeholder="Min number" ng-model="minNumber" step="1" ng-min="0" ng-max="maxNumber" ng-change="change()">
+				<input type="number" placeholder="Max number" ng-model="maxNumber" step="1" ng-min="minNumber" ng-change="change()">
 			</div>
 			<div class="buttons-holder">
-				<button>Show all numbers</button>
-				<button>Show even numbers</button>
-				<button>Show odd numbers</button>
+				<button ng-click="showAll()">Show all numbers</button>
+				<button ng-click="changeParity(true)">Show even numbers</button>
+				<button ng-click="changeParity(false)">Show odd numbers</button>
 			</div>
 		</header>
 		<div class="results-space container">
 			<div class="buttons-holder">
-				<button>Display on the left</button>
-				<button>Display on the right</button>
+				<button ng-click="toggleDisplay(true)">Display on the left</button>
+				<button ng-click="toggleDisplay(false)">Display on the right</button>
 			</div>
 		</div>
 
 		<div class="list">
-			<number-directive items="range"></number-directive>
+			<number-directive items="range" show-all="all" show-even="even"></number-directive>
 			<!-- INSERT THE NUMBERS HERE. YOU ARE ALLOWED THE MODIFY OTHER PARTS OF THE CODE -->
 		</div>
 	</div>
