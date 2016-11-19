@@ -5,7 +5,7 @@
 	angular.module('test.controllers')
 	.controller('testController', testController);
 
-	function testController(numberService) {
+	function testController($scope,numberService) {
 		let vm = this;
 
 		vm.minNumber = 0;
@@ -14,9 +14,21 @@
 		vm.even = false;
 		vm.left = true;
 
+		$scope.$watch(() => vm.minNumber, function (newVal) {
+			if(vm.minNumber > vm.maxNumber) {
+				vm.minNumber = vm.maxNumber;
+			}
+		});
+
+		$scope.$watch(() => vm.maxNumber, function (newVal) {
+			if(vm.maxNumber < vm.minNumber) {
+				vm.maxNumber = vm.minNumber;
+			}
+		});
+
+
 		vm.init = () => {
 			vm.range = numberService.range(vm.minNumber,vm.maxNumber);
-
 		};
 
 		vm.change = () => {

@@ -1,37 +1,41 @@
 html, body {
-	height: 100%;
-	margin: 0;
-	padding: 0;
+    height: 100%;
+    margin: 0;
+    padding: 0;
+}
+
+ul {
+    list-style-type: none;
 }
 
 .content {
-	height: 100%;
-	background-color: red;
-	max-width: 920px;
-	margin-left: auto;
-	margin-right: auto;
+    height: 100%;
+    background-color: red;
+    max-width: 920px;
+    margin-left: auto;
+    margin-right: auto;
 }
 
 .container {
-	padding: 20px;
+    padding: 20px;
 }
 
 .controls-holder {
-	background-color: orange;
+    background-color: orange;
 }
 
 .numbers-holder {
-	display: inline-block;
+    display: inline-block;
 }
 
 .buttons-holder {
-	float: right;
+    float: right;
 }
 
-.text-left{
-	float: left;
+.text-left {
+    float: left;
 }
 
-.text-right{
-	float: right;
+.text-right {
+    float: right;
 }

@@ -13,7 +13,7 @@ const paths = {
     'src/**/*.module.js',
     'src/**/*.service.js',
     'src/**/*.filter.js',
-    'src/**/*.directive.js',    
+    'src/**/*.directive.js',
     'src/**/*.state.js',
     'src/**/*.controller.js',
     'dist/templates.js'
@@ -54,10 +54,6 @@ gulp.task('templates', function() {
   .pipe(gulp.dest("dist"));
 });
 
-gulp.task('clean', function () {
-   return gulp.src('./dist/templates.js').pipe(clean());
-});
-
 gulp.task('webserver', function() {
   connect.server({
     livereload: true
@@ -65,8 +61,8 @@ gulp.task('webserver', function() {
 });
 
 gulp.task('watch',function () {
-  gulp.watch(paths.js, ['dev','clean']);
+  gulp.watch(paths.js, ['dev']);
 });
 
-gulp.task('build', ['concat','clean']);
-gulp.task('default', ['dev','clean','webserver','watch']);
+gulp.task('build', ['concat']);
+gulp.task('default', ['dev','webserver','watch']);

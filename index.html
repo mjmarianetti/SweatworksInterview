@@ -11,8 +11,8 @@
 	<div class="content">
 		<header class="controls-holder container">
 			<div class="numbers-holder">
-				<input type="number" placeholder="Min number" ng-model="vm.minNumber" step="1" ng-min="0" ng-max="vm.maxNumber" ng-change="vm.change()">
-				<input type="number" placeholder="Max number" ng-model="vm.maxNumber" step="1" ng-min="vm.minNumber" ng-change="vm.change()">
+				<input type="number" placeholder="Min number" ng-model="vm.minNumber" step="1" max="vm.maxNumber" ng-change="vm.change()">
+				<input type="number" placeholder="Max number" ng-model="vm.maxNumber" step="1" min="vm.minNumber" ng-change="vm.change()">
 			</div>
 			<div class="buttons-holder">
 				<button ng-click="vm.showAll()">Show all numbers</button>

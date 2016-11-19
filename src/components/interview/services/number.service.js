@@ -13,7 +13,7 @@
 			let rangeArray = [];
 			for (let i = min; i <= max; i++) {
 				rangeArray.push(i);
-			}
+			}		
 			return rangeArray;
 		};
 
