@@ -10,8 +10,7 @@
     return {
       restrict: 'E',
       scope: { items: '=items', showAll: '=showAll', showEven: '=showEven','showLeft': '=showLeft'},
-      templateUrl: 'components/interview/directives/numberDirective/numbersDirective.html',
-      link: ($scope, element, attrs) => {}
+      templateUrl: 'components/interview/directives/numberDirective/numbersDirective.html'
     };
   }
 

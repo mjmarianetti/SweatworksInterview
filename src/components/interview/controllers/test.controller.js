@@ -5,7 +5,7 @@
 	angular.module('test.controllers')
 	.controller('testController', testController);
 
-	function testController($scope,numberService) {
+	function testController(numberService) {
 		let vm = this;
 
 		vm.minNumber = 0;

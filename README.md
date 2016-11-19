@@ -6,6 +6,10 @@
 
     gulp
 
+### Test
+
+    karma start
+
 ### Production
 
     gulp build
